@@ -3,7 +3,7 @@ import os
 
 __author__ = 'Mark Fox <mark.fox@cognitivenetworks.com>'
 
-dependencies = []
+dependencies = ['xmlrunner']
 
 
 # allow use of setuptools/distribute or distutils
@@ -38,6 +38,6 @@ setup(
     url='https://github.com/CognitiveNetworks/pig_latin',
     license='',
     packages=['pig_latin'],
-    test_suite='nose.collector',
+    test_suite='tests',
     **kw
 )

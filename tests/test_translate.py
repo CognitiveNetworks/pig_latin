@@ -1,5 +1,6 @@
 __author__ = 'markfox'
 import unittest
+import xmlrunner
 from pig_latin.translator import translate_word, translate, fix_capitalization
 
 
@@ -33,3 +34,6 @@ class TestPigLatin(unittest.TestCase):
 
     def test_translate_punctation(self):
         self.assertEqual(translate("I'm doing great! Thanks!"), "Iay'may oingday reatgay! Hankstay!")
+
+if __name__ == '__main__':
+    unittest.main(testRunner=xmlrunner.XMLTestRunner(output='test-reports'))
