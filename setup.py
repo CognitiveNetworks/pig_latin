@@ -3,7 +3,7 @@ import os
 
 __author__ = 'Mark Fox <mark.fox@cognitivenetworks.com>'
 
-dependencies = ['xmlrunner']
+dependencies = []
 
 
 # allow use of setuptools/distribute or distutils
@@ -30,7 +30,7 @@ except IOError:
 
 setup(
     name='pig_latin',
-    version='0.0.1',
+    version='0.0.2',
     description='Pig Latin translation library.',
     long_description=long_description,
     author='Mark Fox',
@@ -38,6 +38,6 @@ setup(
     url='https://github.com/CognitiveNetworks/pig_latin',
     license='',
     packages=['pig_latin'],
-    test_suite='tests',
+    test_suite='nose.collector',
     **kw
 )

@@ -1,3 +1,3 @@
 __all__ = ['translator']
 # deprecated to keep older scripts who import this from breaking
-from translator import translate
+from pig_latin.translator import translate

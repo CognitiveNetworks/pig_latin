@@ -1,6 +1,5 @@
 __author__ = 'markfox'
 import unittest
-import xmlrunner
 from pig_latin.translator import translate_word, translate, fix_capitalization
 
 
@@ -15,13 +14,21 @@ class TestPigLatin(unittest.TestCase):
 
     def test_translate_word_raises_TypeError_dict(self):
         with self.assertRaises(TypeError):
-            translate_word({})
+            translate_word({'Test': 'Test Value'})
 
     def test_fix_capitalization_sentenceCase(self):
         self.assertEqual(fix_capitalization('Hello'), 'Ellohay')
 
     def test_fix_capitalization_lowerCase(self):
         self.assertEqual(fix_capitalization('hello'), 'ellohay')
+
+    def test_fix_capitalization_raises_TypeError_integer(self):
+        with self.assertRaises(TypeError):
+            fix_capitalization(1)
+
+    def test_fix_capitalization_raises_TypeError_dict(self):
+        with self.assertRaises(TypeError):
+            fix_capitalization({'Test': 'Test Value'})
 
     def test_translate_single_word(self):
         self.assertEqual(translate('hi'), 'ihay')
@@ -34,6 +41,3 @@ class TestPigLatin(unittest.TestCase):
 
     def test_translate_punctation(self):
         self.assertEqual(translate("I'm doing great! Thanks!"), "Iay'may oingday reatgay! Hankstay!")
-
-if __name__ == '__main__':
-    unittest.main(testRunner=xmlrunner.XMLTestRunner(output='test-reports'))
