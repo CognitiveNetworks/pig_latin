@@ -43,11 +43,11 @@ def translate(sentence):
     :return: The sentence(s) string with capitalization and punctuation in the right place
     """
     # splits on non-word characters
-    word_list = re.split('(\W+)', sentence)  #pylint: disable=W1401
+    word_list = re.split('(\W+)', sentence)  #pylint: disable=W1401, I0011
     if len(word_list) > 1:
         for pos, word in enumerate(word_list):
             # only matches word characters
-            match = re.match('(\w+)', word)  #pylint: disable=W1401
+            match = re.match('(\w+)', word)  #pylint: disable=W1401, I0011
             if match:
                 # replace the word character
                 word_list[pos] = fix_capitalization(word)
