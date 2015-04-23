@@ -30,7 +30,7 @@ except IOError:
 
 setup(
     name='pig_latin',
-    version='0.0.2',
+    version='0.0.3',
     description='Pig Latin translation library.',
     long_description=long_description,
     author='Mark Fox',

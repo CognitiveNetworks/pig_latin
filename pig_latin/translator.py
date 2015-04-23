@@ -1,5 +1,5 @@
 """
-PigLatin translator takes string input and returns the pig latin translation for this string
+PigLatin translator takes string input and returns the pig latin translation
 
 The main method for this is translate(sentence|word)
 """
@@ -18,9 +18,10 @@ def translate_word(word):
 
 def fix_capitalization(word):
     """
-    This deals with proper capitalization of pig latin words so you don't get a capital letter in the middle of a word
+    This deals with proper capitalization of pig latin words
 
-    Calls translate_word after dealing with capital letters, then re-places capitalization with sentence case
+    Calls translate_word after dealing with capital letters, then replaces
+    capitalization with sentence case
     :param word: A single word string
     :return: the translated single word string with sentence case if it had it originally
     """
@@ -36,15 +37,17 @@ def fix_capitalization(word):
 
 def translate(sentence):
     """
-    This is the main method, will translate a sentence or single word and deal properly with case, punctuation
+    This will translate a sentence or single word into pig latin
 
     :param sentence: This is a string of any length and capitalization
     :return: The sentence(s) string with capitalization and punctuation in the right place
     """
-    word_list = re.split('(\W+)', sentence)  # splits on non-word characters
+    # splits on non-word characters
+    word_list = re.split('(\W+)', sentence)  #pylint: disable=W1401
     if len(word_list) > 1:
         for pos, word in enumerate(word_list):
-            match = re.match('(\w+)', word)  # only matches word characters
+            # only matches word characters
+            match = re.match('(\w+)', word)  #pylint: disable=W1401
             if match:
                 # replace the word character
                 word_list[pos] = fix_capitalization(word)
