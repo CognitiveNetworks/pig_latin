@@ -43,4 +43,4 @@ class TestPigLatin(unittest.TestCase):
         self.assertEqual(translate('How are you doing'), 'Owhay reaay ouyay oingday')
 
     def test_translate_punctuation(self):
-        self.assertEqual(translate("I'm doing great! Thanks!"), "Iay'may oingday reatgay! Hankstay!")
+        self.assertEqual(translate("I'm doing great! THANKS!"), "Iay'may oingday reatgay! Hankstay!")
