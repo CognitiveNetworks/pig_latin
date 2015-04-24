@@ -42,5 +42,5 @@ class TestPigLatin(unittest.TestCase):
     def test_translate_simple_sentence(self):
         self.assertEqual(translate('How are you doing'), 'Owhay reaay ouyay oingday')
 
-    def test_translate_punctation(self):
+    def test_translate_punctuation(self):
         self.assertEqual(translate("I'm doing great! Thanks!"), "Iay'may oingday reatgay! Hankstay!")
