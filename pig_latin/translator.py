@@ -29,8 +29,9 @@ def fix_capitalization(word):
         raise TypeError('This only takes string inputs')
     if word.istitle():
         word = word.lower()
-        word = translate_word(word)
-        return word.capitalize()
+        return translate_word(word).capitalize()
+    if word.isupper():
+        return translate_word(word).upper()
     else:
         return translate_word(word)
 

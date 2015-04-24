@@ -22,6 +22,9 @@ class TestPigLatin(unittest.TestCase):
     def test_fix_capitalization_lowerCase(self):
         self.assertEqual(fix_capitalization('hello'), 'ellohay')
 
+    def test_fix_capitalization_upperCase(self):
+        self.assertEqual(fix_capitalization('HELLO'), 'ELLOHAY')
+
     def test_fix_capitalization_raises_TypeError_integer(self):
         with self.assertRaises(TypeError):
             fix_capitalization(1)
